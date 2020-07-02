@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace ArcNetworking
 {
-    class ArcServer : IDisposable
+    public class ArcServer : IDisposable
     {
         #region Props
         private TcpListener TcpServer { get; set; }
@@ -81,7 +81,7 @@ namespace ArcNetworking
             var randomizer = new Random();
             while (true)
             {
-                var connections = this.ActiveConnections.OrderBy(c => randomizer.Next());               
+                var connections = this.ActiveConnections.OrderBy(c => randomizer.Next());
                 foreach (var conn in connections)
                 {
                     var networkStream = conn.TcpClient.GetStream();
@@ -94,7 +94,7 @@ namespace ArcNetworking
                         this.MessageRecived?.Invoke(this, new ArcMessageInfo(conn, bufferCopy));
                     }
                 }
-            }       
+            }
         }
 
         public void Dispose()

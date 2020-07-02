@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ArcNetworking
 {
-    class ArcMessageInfo : EventArgs
+    public class ArcMessageInfo : EventArgs
     {
         public ArcClient ArcClient { get; }
         public byte[] RawMessage { get; }

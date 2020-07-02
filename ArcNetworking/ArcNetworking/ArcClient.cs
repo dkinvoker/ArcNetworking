@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ArcNetworking
 {
-    class ArcClient
+    public class ArcClient
     {
         public Encoding Encoding { get; private set; }
         internal TcpClient TcpClient { get; set; }
